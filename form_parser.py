@@ -66,6 +66,23 @@ def get_html(url):
     print(r.status_code)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def get_report_tables(html, report_name):
     """Takes html and report_name (title of financial statements).
      Returns list of tables in div tags having report_name in text"""
