@@ -5,7 +5,7 @@ get-s1-list.ipynb - ноутбук получения url на формы s1 ч�
 parse_S1_BS.ipynb - ноутбук с примером парсинга данных финансовых отчётов формы s1
 
 1. Словарь с названиями финансовых отчётов и полей таблиц для парсинга
-`python
+```python
 fields_dict = {'Statement of Operations':['Revenue',
                                          ['Net Income', 'Net Loss', 'net income (loss)']],
               'Balance Sheet': ['Cash and cash equivalents',
@@ -18,9 +18,9 @@ fields_dict = {'Statement of Operations':['Revenue',
                                 'Short-Term Debt'],
               'Statement of Cash Flow': ['Net cash used in operating activities', 
                                          ['Purchases of property and equipment', 'Proceeds from property and equipment']]}
-`
+```
 2. iterate_fields_dict возвращает словарь с именами полей и из значениями из формы S1 
-`python
+```python
 url = 'https://www.sec.gov/Archives/edgar/data/1430306/000161577418011996/s113713_s1a.htm'
 iterate_fields_dict(html=get_html(url), fields_dict=fields_dict)
-`
+```
