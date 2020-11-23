@@ -1,7 +1,7 @@
 # import libraries
 import json
 import urllib.request
-from secure import TOKEN
+from secure import API_KEY
 
 import requests
 import pandas as pd
@@ -12,7 +12,7 @@ import csv
 def get_filings(start_from=0):
     # API Key
     #     TOKEN = '__'
-    API = "https://api.sec-api.io?token=" + TOKEN
+    API = "https://api.sec-api.io?token=" + API_KEY
 
     # define the filter parameters you want to send to the API
     payload = {
@@ -60,7 +60,7 @@ def get_html(url):
                     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                     'Chrome/58.0.3029.110 Safari/537.36',
                 'Accept-Language': 'en-US, en;q=0.5'})
-    r = requests.get(url, headers=headers, verify=True)
+    r = requests.get(url, headers=headers, verify=False)
     if r.ok:
         return r.text
     print(r.status_code)
